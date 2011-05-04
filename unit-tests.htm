@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Unit Testing HEX <=> RGB Conversion</title>
+<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css" />
+</head>
+<body class="yui3-skin-sam  yui-skin-sam">
+<h1>HEX <=> RGB Conversion Unit Tests</h1>
+<p>
+	A two way color conversion micro-framework for Hexadecimal and RGB integer colors
+</p>
+<div id="testLogger"></div>
+<script type="text/javascript" src="http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="hex-rgb.js"></script>
+<script type="text/javascript">
+YUI({ filter: 'raw' }).use("node", "console", "test" , function (Y) {
+	Y.namespace("conversion.test");   
+	Y.conversion.test.ToRGBTestCase = new Y.Test.Case({
+		name : "ToRGB Tests",
+		
+		//tests
+		testToRGB : function () {
+			var Assert = Y.Assert;
+		
+			var rgb = toRGB("ff0000");
+
+			Assert.areEqual(rgb[0], 255);
+            Assert.areEqual(rgb[1], 0);
+            Assert.areEqual(rgb[2], 0);
+		}
+	});
+	
+	Y.conversion.test.ToHexTestCase = new Y.Test.Case({
+		name : "ToHex Tests",
+		
+		//tests
+		testToHex : function () {
+			var Assert = Y.Assert,
+				func = function(){};
+		
+			var hex = toHex(255, 0, 0);
+			
+			Assert.areEqual("ff0000", hex);
+		}
+	});
+	
+	Y.conversion.test.ConversionSuite = new Y.Test.Suite("Conversion Suite");
+	Y.conversion.test.ConversionSuite.add(Y.conversion.test.ToRGBTestCase);
+	Y.conversion.test.ConversionSuite.add(Y.conversion.test.ToHexTestCase);
+
+	var r = new Y.Console({
+		newestOnTop : false,
+		style: 'block'
+	});
+	
+	r.render('#testLogger');    
+	Y.Test.Runner.add(Y.conversion.test.ConversionSuite);
+
+	Y.Test.Runner.run();
+});
+</script>

@@ -1,0 +1,1 @@
+(function(b){b.toRGB=function(a){a=parseInt(a,16);return[a>>16,a>>8&255,a&255]};b.toHex=function(a,b,c){return(c|b<<8|a<<16).toString(16)}})(this);
