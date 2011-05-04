@@ -14,7 +14,7 @@
         //      light as possible there is no idiot-proofing, if you pass in bad 
         //      data I'm not fixing it for you :-)
         //
-	    // color: `String`
+        // color: `String`
         //      6 digit Hexadecimal string value
         //
         // returns: Array
