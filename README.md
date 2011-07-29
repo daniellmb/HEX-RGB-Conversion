@@ -1,7 +1,7 @@
 HEX <=> RGB Conversion
 =========
 
-A two way color conversion micro-library for Hexadecimal and RGB integer colors, weighing in at only **138 bytes** gzipped. This micro-library is completely self contained with no external dependencies.
+A two way color conversion micro-library for Hexadecimal and RGB integer colors, weighing in at only **162 bytes** gzipped. This micro-library is completely self contained with no external dependencies.
 
 ### Features
 
