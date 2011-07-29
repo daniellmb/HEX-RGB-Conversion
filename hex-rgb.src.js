@@ -53,7 +53,9 @@
         // example:
         //	var hex = toHex(255, 0, 0);
         var hex = (blue | green << 8 | red << 16).toString(16);
-        return "000000".substr(0,6-hex.length)+hex;
+
+        //fix for leading zero bug in FF
+        return "000000".substr(0, 6 - hex.length) + hex;
     };
 
 })(this);
