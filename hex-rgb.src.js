@@ -53,11 +53,7 @@
         // example:
         //	var hex = toHex(255, 0, 0);
         var hex = (blue | green << 8 | red << 16).toString(16);
-        while (hex.length < 6)
-        {
-            hex = "0" + hex;
-        }
-        return hex;
+        return "000000".substr(0,6-hex.length)+hex;
     };
 
 })(this);
