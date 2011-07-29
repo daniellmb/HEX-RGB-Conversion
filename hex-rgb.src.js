@@ -7,11 +7,11 @@
 (function (context) {
 
     context['toRGB'] = function (/* String */color) {
-        // summary: 
+        // summary:
         //	Converts a 6 digit Hexadecimal string value to an RGB integer array.
         //      Important! input must be a 6 digit Hexadecimal string "bad" will
-        //      not convert correctly but "bbaadd" will. To keep the function as 
-        //      light as possible there is no idiot-proofing, if you pass in bad 
+        //      not convert correctly but "bbaadd" will. To keep the function as
+        //      light as possible there is no idiot-proofing, if you pass in bad
         //      data I'm not fixing it for you :-)
         //
         // color: `String`
@@ -49,11 +49,16 @@
         //
         // returns: String
         //	6 digit Hexadecimal string value
-        //	
+        //
         // example:
         //	var hex = toHex(255, 0, 0);
-
-        return (blue | green << 8 | red << 16).toString(16);
+        var hex = (blue | green << 8 | red << 16).toString(16);
+        while (hex.length < 6)
+        {
+            hex = "0" + hex;
+        }
+        return hex;
     };
 
 })(this);
+
