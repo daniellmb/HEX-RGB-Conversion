@@ -15,14 +15,14 @@
 <script type="text/javascript" src="hex-rgb.js"></script>
 <script type="text/javascript">
 YUI({ filter: 'raw' }).use("node", "console", "test" , function (Y) {
-	Y.namespace("conversion.test");   
+	Y.namespace("conversion.test");
 	Y.conversion.test.ToRGBTestCase = new Y.Test.Case({
 		name : "ToRGB Tests",
-		
+
 		//tests
 		testToRGB : function () {
 			var Assert = Y.Assert;
-		
+
 			var rgb = toRGB("ff0000");
 
 			Assert.areEqual(rgb[0], 255);
@@ -30,21 +30,25 @@ YUI({ filter: 'raw' }).use("node", "console", "test" , function (Y) {
             Assert.areEqual(rgb[2], 0);
 		}
 	});
-	
+
 	Y.conversion.test.ToHexTestCase = new Y.Test.Case({
 		name : "ToHex Tests",
-		
+
 		//tests
 		testToHex : function () {
 			var Assert = Y.Assert,
 				func = function(){};
-		
+
 			var hex = toHex(255, 0, 0);
-			
+
 			Assert.areEqual("ff0000", hex);
+
+			var hex = toHex(0, 0, 255);
+
+			Assert.areEqual("0000ff", hex);
 		}
 	});
-	
+
 	Y.conversion.test.ConversionSuite = new Y.Test.Suite("Conversion Suite");
 	Y.conversion.test.ConversionSuite.add(Y.conversion.test.ToRGBTestCase);
 	Y.conversion.test.ConversionSuite.add(Y.conversion.test.ToHexTestCase);
@@ -53,10 +57,11 @@ YUI({ filter: 'raw' }).use("node", "console", "test" , function (Y) {
 		newestOnTop : false,
 		style: 'block'
 	});
-	
-	r.render('#testLogger');    
+
+	r.render('#testLogger');
 	Y.Test.Runner.add(Y.conversion.test.ConversionSuite);
 
 	Y.Test.Runner.run();
 });
 </script>
+
