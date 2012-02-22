@@ -14,21 +14,24 @@ A two way color conversion micro-library for Hexadecimal and RGB integer colors,
 	- Node.js
 	- Rhino
 	- Development (console, etc.) 
-	- Safari 4
-	- Google Chrome 5
-	- Internet Explorer 5 - 9
+	- Safari
+	- Google Chrome
+	- Internet Explorer
 	- iPhone Safari
 	- iPad Safari
-	- Firefox 3 - 4
-	- Opera 10.61
+	- Firefox
+	- Opera
 
 ### How to use
 
 ```javascript
-	//convert hexadecimal color to RGB
-	var rgb = toRGB("FF0000");
-	//convert RGB to hexadecimal
-	var hex = toHex(255, 0, 0);
+	//convert Hexadecimal color to RGB values
+	var rgb = toRGB("c0ffee");
+	//rgb === [192, 255, 238]
+
+	//convert RGB values to Hexadecimal color
+	var hex = toHex(192, 255, 238);
+	//hex === "c0ffee"
 ```
 
 ### Documentation 
@@ -51,16 +54,20 @@ If you don't want these methods added to the window object simply modify the imm
 		- An array containing the RGB integers in the following format [red, green, blue]
 	
 	- example:
-		- Convert the Hexadecimal value "FF0000" (red color) to RGB integers. The variable rgb value will be equal to [255, 0, 0]
+		- Convert the Hexadecimal value "c0ffee" (blue color) to RGB integers. The variable "rgb" will be equal to [192, 255, 238]
 
 		  ```javascript
-		  var rgb = toRGB("FF0000");
+		  var rgb = toRGB("c0ffee");
+		  //rgb === [192, 255, 238]
 		  ```
 
 - **toHex** *(`Number` red, `Number` green, `Number` blue)*
 
 	- summary:
-		- Register a callback on a named topic.
+        - Converts 3 RGB integer values into a Hexadecimal string.
+        Important! input must be integers with a range of 0 to 255.
+        To keep the function as light as possible there is no idiot-proofing,
+        if you pass in bad data I'm not fixing it for you :-)
 
 	- red: `Number`
 		- number ranging from 0 to 255 indicating the amount of red
@@ -75,9 +82,11 @@ If you don't want these methods added to the window object simply modify the imm
 		- 6 digit Hexadecimal string value
 
 	- example:
+		- Convert the RGB values [192, 255, 238] (blue color) to Hexadecimal string. The variable "hex" will be equal to "c0ffee"
 
 		  ```javascript
-		  var hex = toHex(255, 0, 0);
+		  var hex = toHex(192, 255, 238);
+		  //hex === "c0ffee"
 		  ```
 
 ### License 

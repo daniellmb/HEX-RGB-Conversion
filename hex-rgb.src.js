@@ -6,7 +6,7 @@
 
 (function (context) {
 
-    context['toRGB'] = function (/* String */color) {
+    context['toRGB'] = function (/* String */ color) {
         // summary:
         //	Converts a 6 digit Hexadecimal string value to an RGB integer array.
         //      Important! input must be a 6 digit Hexadecimal string "bad" will
@@ -14,7 +14,7 @@
         //      light as possible there is no idiot-proofing, if you pass in bad
         //      data I'm not fixing it for you :-)
         //
-        // color: `String`
+        // color: String
         //      6 digit Hexadecimal string value
         //
         // returns: Array
@@ -22,7 +22,7 @@
         //
         // example:
         //	Convert the Hexadecimal value "c0ffee" (blue color) to RGB integers.
-        //      The variable rgb value will be equal to [192, 255, 238]
+        //      The variable "rgb" will be equal to [192, 255, 238]
         //
         //	var rgb = toRGB("c0ffee");
 
@@ -33,7 +33,7 @@
         return [num >> 16, num >> 8 & 255, num & 255];
     };
 
-    context['toHex'] = function (/* Number */red, /* Number */green, /* Number */blue) {
+    context['toHex'] = function (/* Number */ red, /* Number */ green, /* Number */ blue) {
         // summary:
         //	Converts 3 RGB integer values into a Hexadecimal string.
         //      Important! input must be integers with a range of 0 to 255.
@@ -51,7 +51,12 @@
         //	6 digit Hexadecimal string value
         //
         // example:
-        //	var hex = toHex(255, 0, 0);
+        //      Convert the RGB values [192, 255, 238] (blue color) to Hexadecimal string.
+        //      The variable "hex" will be equal to "c0ffee"
+        //
+        //      var hex = toHex(192, 255, 238);
+
+        //return 6 digit Hexadecimal string
         return ((blue | green << 8 | red << 16) | 1 << 24).toString(16).slice(1);
     };
 
