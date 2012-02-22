@@ -5,7 +5,7 @@ A two way color conversion micro-library for Hexadecimal and RGB integer colors,
 
 ### Features
 
-- Supports
+- Supported Methods
 	- toRGB
 	- toHex
 
@@ -82,7 +82,7 @@ If you don't want these methods added to the window object simply modify the imm
 		- 6 digit Hexadecimal string value
 
 	- example:
-		- Convert the RGB values [192, 255, 238] (blue color) to Hexadecimal string. The variable "hex" will be equal to "c0ffee"
+		- Convert the RGB values [192, 255, 238]  (blue color) to Hexadecimal string. The variable "hex" will be equal to "c0ffee"
 
 		  ```javascript
 		  var hex = toHex(192, 255, 238);
