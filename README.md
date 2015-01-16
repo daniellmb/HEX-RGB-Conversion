@@ -27,7 +27,7 @@ A two way color conversion micro-library for Hexadecimal and RGB integer colors,
 ```javascript
 	//convert Hexadecimal color to RGB values
 	var rgb = toRGB("c0ffee");
-	//rgb === [192, 255, 238]
+	//rgb === {red: 192,green: 255,blue: 238}
 
 	//convert RGB values to Hexadecimal color
 	var hex = toHex(192, 255, 238);
@@ -48,11 +48,11 @@ If you don't want these methods added to the window object simply modify the imm
 		- Converts a 6 digit Hexadecimal string value to an RGB integer array. Important! input must be a 6 digit Hexadecimal string "bad" will not convert correctly but "bbaadd" will. To keep the function as light as possible there is no idiot-proofing, if you pass in bad data I'm not fixing it for you :-)
 	
 	- example:
-		- Convert the Hexadecimal value "c0ffee" (a blue color) to RGB integers. The variable "rgb" will be equal to [192, 255, 238]
+		- Convert the Hexadecimal value "c0ffee" (a blue color) to RGB integers. The variable "rgb" will be equal to {red: 192,green: 255,blue: 238}
 
 		  ```javascript
 		  var rgb = toRGB("c0ffee");
-		  //rgb === [192, 255, 238]
+		  //rgb === {red: 192,green: 255,blue: 238}
 		  ```
 
 	- color: `String`
