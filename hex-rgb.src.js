@@ -30,7 +30,7 @@
         var num = parseInt(color, 16);
 
         //return the red, green and blue values as a new array
-        return [num >> 16, num >> 8 & 255, num & 255];
+        return {red:num >> 16,green:num >> 8 & 255,blue:num & 255};
     };
 
     context['toHex'] = function (/* Number */ red, /* Number */ green, /* Number */ blue) {
